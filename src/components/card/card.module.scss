@@ -1,0 +1,92 @@
+@import '../../vars';
+
+.card {
+    width: $width;
+    height: $height;
+    margin: $marginY .25rem;
+    background: transparentize($secondaryColor, 0.9);
+    border-radius: 10px;
+    border-top: 1px solid transparentize($secondaryColor, 0.5);;
+    box-shadow: 0 15px 25px transparentize(#000, 0.9);
+    backdrop-filter: blur(15px);
+
+    position: relative;
+}
+
+.imgBx{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: zoom-in;
+    transform-origin: top;
+    transform: translateY($width/10) scale(0.5);
+
+    &:hover{
+        transform-origin: center;
+        transform: scale(0.9);
+    }
+}
+
+.imgBx img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.content{
+    height: 100%;
+    padding-bottom: $width/10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.content .details{
+    h2{
+        color: $textColor;
+        font-size: 1.5em;
+        font-weight: 500;
+
+        span{
+            font-size: 0.7em;
+            color: $primaryColor;
+            font-weight: 400;
+        }
+    }
+}
+
+.content .sci{
+    display: flex;
+    margin-top: 5px;
+    list-style-type: none;
+
+    li{
+        margin: 4px;
+
+        a{
+            width: 3 * $width/20;
+            height: 3 * $width/20;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: transparent;
+            font-size: 1.25em;
+            color: #444;
+            text-decoration: none;
+            box-shadow: 0 7px 15px transparentize(#000, 0.9);
+            border-top: 1px solid transparentize(#000, 0.95);
+            transition: 0.5s;
+
+            &:hover{
+                background: $primaryColor;
+                color: $secondaryColor;
+            }
+        }
+    }
+}
